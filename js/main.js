@@ -1,5 +1,3 @@
-
-
 const memberContainerDom = document.getElementById('member-container');
 
 let teamMembers = [
@@ -37,12 +35,30 @@ let teamMembers = [
 
 for (let i = 0; i < teamMembers.length; i++) {
     const  currentMember = teamMembers[i];
+    let foto = currentMember['foto'];
+    let nome = currentMember['nome'];
+    let ruolo = currentMember['ruolo']
 
-    memberContainerDom.innerHTML += (`<div>Nome:${currentMember['nome']}</div>`);
-    memberContainerDom.innerHTML += (`<div>Ruolo: ${currentMember['ruolo']}</div>`);
-    memberContainerDom.innerHTML += (`<div>Foto: <img src="img/${currentMember['foto']}"></div>`);
+    cardCreator(foto, nome, ruolo );
+
+    // memberContainerDom.innerHTML += `<div>Nome:${currentMember['nome']}</div>`;
+    // memberContainerDom.innerHTML += `<div>Ruolo: ${currentMember['ruolo']}</div>`;
+    // memberContainerDom.innerHTML += `<div>Foto: <img src="img/${currentMember['foto']}"></div>`;
 
     for (let key in currentMember) {
         console.log(key + ': ' + currentMember[key]);
     }
+}
+
+
+function cardCreator (foto, nome, ruolo){
+    const card = memberContainerDom.innerHTML += `<div class="card">
+    <div class="card-image"><img src="img/${foto}"></div>
+    <div class="category">Nome: ${nome}</div>
+    <div class="heading">Ruolo: ${ruolo}</div>
+    </div>`;
+
+    // cardDom.innerHTML += ``;
+    // cardDom.innerHTML += ``;
+    // cardDom.innerHTML += ``;
 }
