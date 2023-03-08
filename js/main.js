@@ -1,10 +1,6 @@
-// Utilizzando i dati forniti, creare un array di oggetti per rappresentare i membri del team.
-// Ogni membro è caratterizzato dalle seguenti informazioni: nome, ruolo e foto.
-// MILESTONE 0:
-// Creare l’array di oggetti con le informazioni fornite.
-// MILESTONE 1:
-// Stampare su console le informazioni di nome, ruolo e la stringa della foto
 
+
+const memberContainerDom = document.getElementById('member-container');
 
 let teamMembers = [
     {
@@ -41,7 +37,12 @@ let teamMembers = [
 
 for (let i = 0; i < teamMembers.length; i++) {
     const  currentMember = teamMembers[i];
-    
+
+    memberContainerDom.innerHTML += (`<div>Nome:${currentMember['nome']}</div>`);
+    memberContainerDom.innerHTML += (`<div>Ruolo: ${currentMember['ruolo']}</div>`);
+    memberContainerDom.innerHTML += (`<div>Foto: ${currentMember['foto']}</div>`);
+
+
     for (let key in currentMember) {
         console.log(key + ': ' + currentMember[key]);
     }
