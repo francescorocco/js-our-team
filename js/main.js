@@ -40,8 +40,7 @@ for (let i = 0; i < teamMembers.length; i++) {
 
     memberContainerDom.innerHTML += (`<div>Nome:${currentMember['nome']}</div>`);
     memberContainerDom.innerHTML += (`<div>Ruolo: ${currentMember['ruolo']}</div>`);
-    memberContainerDom.innerHTML += (`<div>Foto: ${currentMember['foto']}</div>`);
-
+    memberContainerDom.innerHTML += (`<div>Foto: <img src="img/${currentMember['foto']}"></div>`);
 
     for (let key in currentMember) {
         console.log(key + ': ' + currentMember[key]);
